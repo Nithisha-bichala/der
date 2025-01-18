@@ -1,0 +1,12 @@
+echo "Name: YourName\nDate: 2025-01-18" > attendance_record.txt
+git add attendance_record.txt
+git commit -m "Add attendance_record.txt with name and date"
+git checkout shift
+echo "Shift Details: Morning Shift\nTime: 8 AM - 4 PM" > shift_info.txt
+git add shift_info.txt
+git commit -m "Add shift_info.txt with shift details"
+git checkout main
+git merge attendance -m "Merge attendance branch into main"
+git merge shift -m "Merge shift branch into main"
+git remote add origin https://github.com/yourusername/project_name.git
+git push -u origin main
