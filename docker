@@ -1,0 +1,24 @@
+# Use an official Ubuntu as a parent image
+FROM ubuntu:latest
+
+# Set the maintainer label
+LABEL maintainer="your-email@example.com"
+
+# Install Git
+RUN apt-get update && \
+    apt-get install -y git && \
+    apt-get clean
+
+# Default command to run when starting the container
+CMD ["git", "--version"]
+
+
+
+docker build -t your-dockerhub-username/git-image .
+
+
+
+docker login
+
+
+docker push your-dockerhub-username/git-image
